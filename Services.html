@@ -1,0 +1,452 @@
+<!--
+        I declare that this code was written by me. 
+ I will not copy or allow others to copy my code. 
+ I understand that copying code is considered as plagiarism.
+ 
+ Student Name: Adam Sim Yi Hong
+ Student ID: 22030259
+ Class: E63C
+ Date/Time Last modified:8/4/2023
+ 
+    -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="validateInputs.js"></script>
+
+    <style>
+        body {
+            background-color: rgb(35, 35, 250);
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI';
+
+        }
+
+        .nav {
+            color: aqua;
+            display: flex;
+            float: right;
+            text-decoration: none;
+            margin-top: 15px;
+            margin-right: 100px;
+
+
+        }
+
+        .navv {
+            color: aqua;
+            float: left;
+            margin-left: 100px;
+        }
+
+        nav a {
+            color: aqua;
+            text-decoration: none;
+
+        }
+
+        li {
+            display: inline;
+            margin-right: 10px;
+            padding-left: 25px;
+        }
+
+        header {
+            font-size: 40px;
+            font-family: Georgia;
+            font-weight: bold;
+            color: aqua;
+            letter-spacing: 30px;
+            padding-top: 10%;
+            padding-bottom: 5%;
+
+        }
+
+        h2 {
+            font-size: 40px;
+            font-family: Georgia;
+        }
+
+        input {
+            width: 51%;
+            line-height: 25px;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 1%;
+            margin-top: 10%;
+        }
+
+        #transferbutton {
+            font-weight: bold;
+            background-color: rgb(0, 241, 185);
+            color: white;
+            border: none;
+            padding-left: 22%;
+            padding-right: 25%;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            margin-right: -90px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .bankaccinfo {
+            margin-top: 7%;
+        }
+
+        .paypal {
+            margin-bottom: 5%;
+
+
+        }
+
+        .amountinfo {
+            padding-top: 5%;
+            padding-bottom: 10%;
+        }
+
+        .hr {
+            margin-top: 10%;
+        }
+
+        #transferamountid1 {
+            margin-right: 3%;
+        }
+
+
+        #banktypeid1 {
+            margin-right: 4%;
+        }
+
+        #recipiantbankaccountid {
+            margin-right: 145px;
+        }
+
+        #bankaccountnumberid {
+            margin-right: 6%;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navv">
+        <p>C369 GA</p>
+    </div>
+    <div class="nav">
+        <nav>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="money.html">Account</a></li>
+
+        </nav>
+    </div>
+
+    <header>
+        <h1>SERVICES</h1>
+    </header>
+    <section>
+        <div class="bankaccinfo">
+            <h2>TO BANK ACCOUNT</h2>
+            <p>Bank Account Type: <input type="text" id="banktypeid1"><br></p>
+            <p>Bank Account Number: <input type="number" id="bankaccountnumberid"><br></p>
+            <p>Recipiant Bank Account Number: <input type="number" id="recipiantbankaccountid"></p>
+        </div>
+
+        <div class="amountinfo">
+            <h2>AMOUNT</h2>
+            <p>Transfer Amount: <input type="number" id="transferamountid1"><br></p>
+
+            <button id="transferbutton" onclick="enoughmoney()">Transfer</button>
+
+
+            <div class="hr">
+                <hr>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="paypal">
+            <h2>TRANSFER VIA PAYPAL</h2>
+        </div>
+
+
+        <!-- paypal button will be rendered here using Javascript -->
+
+        <div id="btn-paypal-checkout"></div>
+
+
+
+        <script>
+
+            window.addEventListener("load", function () {
+
+                var cartItems = [{
+
+                    name: "Product 1",
+
+                    description: "Description of product 1",
+
+                    quantity: 1,
+
+                    price: 50,
+
+                    sku: "prod1",
+
+                    currency: "USD"
+
+                }, {
+
+                    name: "Product 2",
+
+                    description: "Description of product 2",
+
+                    quantity: 3,
+
+                    price: 20,
+
+                    sku: "prod2",
+
+                    currency: "USD"
+
+                }, {
+
+                    name: "Product 3",
+
+                    description: "Description of product 3",
+
+                    quantity: 4,
+
+                    price: 10,
+
+                    sku: "prod3",
+
+                    currency: "USD"
+
+                }];
+
+
+
+                var total = 0;
+
+                for (var a = 0; a < cartItems.length; a++) {
+
+                    total += (cartItems[a].price * cartItems[a].quantity);
+
+                }
+
+
+
+                // Render the PayPal button
+
+                paypal.Button.render({
+
+
+
+                    // Set your environment
+
+                    env: 'sandbox', // sandbox | production
+
+
+
+                    // Specify the style of the button
+
+                    style: {
+
+                        label: 'checkout',
+
+                        size: 'medium', // small | medium | large | responsive
+
+                        shape: 'pill', // pill | rect
+
+                        color: 'gold', // gold | blue | silver | black,
+
+                        layout: 'vertical'
+
+                    },
+
+
+
+                    // PayPal Client IDs - replace with your own
+
+                    // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+
+
+
+                    client: {
+
+                        sandbox: 'AcQv4ZDe9ioiKJmEJN2RlFF2-FieCZ5kcgKH1hTl3eFHkB2sRmlaCf9iRP1iNhoEZSjEvU3JISVAp_YS',
+
+                        production: ''
+
+                    },
+
+
+
+                    funding: {
+
+                        allowed: [
+
+                            paypal.FUNDING.CARD,
+
+                            paypal.FUNDING.ELV
+
+                        ]
+
+                    },
+
+
+
+                    payment: function (data, actions) {
+
+                        return actions.payment.create({
+
+                            payment: {
+
+                                transactions: [{
+
+                                    amount: {
+
+                                        total: total,
+
+                                        currency: 'USD'
+
+                                    },
+
+                                    item_list: {
+
+                                        // custom cartItems array created specifically for PayPal
+
+                                        items: cartItems
+
+                                    }
+
+                                }]
+
+                            }
+
+                        });
+
+                    },
+
+
+
+                    onAuthorize: function (data, actions) {
+
+                        return actions.payment.execute().then(function () {
+
+                            // you can use all the values received from PayPal as you want
+
+                            console.log({
+
+                                "intent": data.intent,
+
+                                "orderID": data.orderID,
+
+                                "payerID": data.payerID,
+
+                                "paymentID": data.paymentID,
+
+                                "paymentToken": data.paymentToken
+
+                            });
+
+
+
+                            function paymentMade(orderID, payerID, paymentID, paymentToken) {
+
+                                var ajax = new XMLHttpRequest();
+
+                                ajax.open("POST", "paypal.php", true);
+
+
+
+                                ajax.onreadystatechange = function () {
+
+                                    if (this.readyState == 4) {
+
+                                        if (this.status == 200) {
+
+                                            var response = JSON.parse(this.responseText);
+
+                                            console.log(response);
+
+                                        }
+
+
+
+                                        if (this.status == 500) {
+
+                                            console.log(this.responseText);
+
+                                        }
+
+                                    }
+
+                                };
+
+
+
+                                var formData = new FormData();
+
+                                formData.append("orderID", orderID);
+
+                                formData.append("payerID", payerID);
+
+                                formData.append("paymentID", paymentID);
+
+                                formData.append("paymentToken", paymentToken);
+
+                                ajax.send(formData);
+
+                            }
+
+                        });
+
+                    },
+
+
+
+                    onCancel: function (data, actions) {
+
+                        console.log(data);
+
+                    }
+
+
+
+                }, '#btn-paypal-checkout');
+
+            });
+
+        </script>
+
+        <!-- Load the required checkout.js script -->
+
+        <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
+
+
+
+        <!-- Load the required Braintree components. -->
+
+        <script src="https://js.braintreegateway.com/web/3.39.0/js/client.min.js"></script>
+
+        <script src="https://js.braintreegateway.com/web/3.39.0/js/paypal-checkout.min.js"></script>
+    </section>
+    <footer>
+        <p>Email Us: Info.TransferTrust.com | Tel: 123-456-7890 |
+            500 Terry Francine Street San Francisco, CA 94158</p>
+    </footer>
+
+</body>
+
+</html>

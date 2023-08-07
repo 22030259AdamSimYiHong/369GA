@@ -1,0 +1,135 @@
+<!--
+        I declare that this code was written by me. 
+ I will not copy or allow others to copy my code. 
+ I understand that copying code is considered as plagiarism.
+ 
+ Student Name: Adam Sim Yi Hong
+ Student ID: 22030259
+ Class: E63C
+ Date/Time Last modified:7/16/2023
+ 
+    -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src = "resend.js" >
+    </script>
+    <style>
+        body {
+            background-color: rgb(35, 35, 250);
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI';
+        }
+
+        .nav {
+            color: aqua;
+            display: flex;
+            float: right;
+            text-decoration: none;
+            margin-top: 15px;
+            margin-right: 100px;
+        }
+
+        .navv {
+            color: aqua;
+            float: left;
+            margin-left: 100px;
+        }
+
+        nav a {
+            color: aqua;
+            text-decoration: none;
+
+        }
+
+        li {
+            display: inline;
+            margin-right: 10px;
+            padding-left: 25px;
+        }
+
+        header {
+
+            font-family: Georgia;
+            font-size: 35px;
+            padding-top: 10%;
+            letter-spacing: 10px;
+        }
+
+        #PINid {
+            width: 50%;
+            line-height: 70px;
+        }
+
+        .para {
+            font-size: 20px;
+        }
+
+        #OTPbutton {
+            font-weight: bold;
+            background-color: white;
+            color: blue;
+            border: none;
+            padding: 10px;
+            margin-left: 100px;
+            margin-top: -10px;
+            border: solid;
+            border-color: black;
+            cursor: pointer;
+            
+        }
+        #enterbutton{
+            font-weight: bold;
+            background-color: rgb(0, 241, 185);
+            color: white;
+            border: none;
+            padding-left: 20%;
+            padding-right: 19%;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            margin-right: 70px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            padding: 1%;
+            margin-top: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navv">
+        <p>C369 GA</p>
+    </div>
+    <div class="nav">
+        <nav>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Services.html">Services</a></li>
+        </nav>
+    </div>
+
+    <header>
+        <h1>ONE TIME PASSWORD</h1><br>
+    </header>
+    <section>
+        <div class="para">
+            <p>A PIN has been sent to your phone number !</p><br>
+        </div>
+
+        <p>PIN: <input type="number" id="PINid"><br></p>
+
+        <button id="OTPbutton" onclick="resend()">Resend OTP</button>
+        <button id="enterbutton" onclick="validatee()">Enter</button><br>
+    </section>
+    <footer>
+        <p>Email Us: Info.TransferTrust.com | Tel: 123-456-7890 |
+            500 Terry Francine Street San Francisco, CA 94158</p>
+    </footer>
+</body>
+
+</html>

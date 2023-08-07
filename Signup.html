@@ -1,0 +1,186 @@
+<!--
+        I declare that this code was written by me. 
+ I will not copy or allow others to copy my code. 
+ I understand that copying code is considered as plagiarism.
+ 
+ Student Name: Adam Sim Yi Hong
+ Student ID: 22030259
+ Class: E63C
+ Date/Time Last modified:7/16/2023
+ 
+    -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src = "pin.js" >
+    </script>
+    <style>
+        body {
+            background-color: rgb(35, 35, 250);
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI';
+
+        }
+
+        .nav {
+            color: aqua;
+            display: flex;
+            float: right;
+            text-decoration: none;
+            margin-top: 15px;
+            margin-right: 100px;
+
+
+        }
+
+        .navv {
+            color: aqua;
+            float: left;
+            margin-left: 100px;
+        }
+
+        nav a {
+            color: aqua;
+            text-decoration: none;
+
+        }
+
+        li {
+            display: inline;
+            margin-right: 10px;
+            padding-left: 25px;
+        }
+
+        .signupinfo {
+            padding-top: 7%;
+
+        }
+
+        .signup {
+            font-family: Georgia;
+            font-size: 45px;
+            letter-spacing: 20px;
+        }
+
+        input {
+            width: 51%;
+            line-height: 25px;
+
+        }
+
+        .pininfo {
+            font-size: 20px;
+            padding: 5%;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 1%;
+        }
+
+        #signupbutton {
+            font-weight: bold;
+            background-color: rgb(0, 241, 185);
+            color: white;
+            border: none;
+            padding-left: 22%;
+            padding-right: 25%;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            margin-right: -90px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        #enterbutton{
+            font-size: 15px;
+            font-weight: bold;
+            background-color: rgb(0, 241, 185);
+            color: white;
+            border: none;
+            padding-left: 20%;
+            padding-right: 20%;
+            padding-top: 8px;
+            padding-bottom: 9px;
+            margin-right: -12px;
+            margin-top: -20px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #phonenumberid {
+            margin-right: 25px;
+        }
+
+        #usernameid {
+            margin-right: -10px;
+        }
+
+        #passwordid {
+            margin-right: -15px;
+        }
+
+        #retypeid {
+            margin-right: 40px;
+        }
+
+        #pin {
+            margin-right: -45px;
+        }
+        #resend {
+            font-weight: bold;
+            background-color: white;
+            color: blue;
+            border: none;
+            padding: 10px;
+            margin-left: 80px;
+            margin-top: -10px;
+            border: solid;
+            border-color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navv">
+        <p>C369 GA</p>
+    </div>
+    <div class="nav">
+        <nav>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="Signup.html">Sign Up</a></li>
+        </nav>
+    </div>
+
+    <section class="signupinfo">
+        <div class="signup">
+            <h2>SIGN UP</h2>
+        </div>
+
+        <p>Phone Number: <input type="number" id="phonenumberid" ><br></p>
+        <p>Username: <input type="text" id="usernameid" ><br></p>
+        <p>Password: <input type="password" id="passwordid" ><br></p>
+        <p>Retype Password: <input type="password" id="retypeid" ><br></p>
+
+
+        <button id="signupbutton" onclick="pin()">Sign Up</button>
+    </section>
+
+    <div class="pininfo">
+        <p>Enter your PIN here !</p>
+        <p>PIN: <input type="number" id="pin"></p>
+        <button id="resend" onclick="resendpin()">Resend PIN</button>
+        <button id="enterbutton" onclick="pinvalidate()">Enter</button>
+    </div>
+    <footer>
+        <p>Email Us: Info.TransferTrust.com | Tel: 123-456-7890 |
+            500 Terry Francine Street San Francisco, CA 94158</p>
+    </footer>
+</body>
+
+</html>

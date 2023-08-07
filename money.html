@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src = "money.js">
+    </script>
+    <style>
+        body {
+            background-color: rgb(35, 35, 250);
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI';
+
+        }
+
+        .nav {
+            color: aqua;
+            display: flex;
+            float: right;
+            text-decoration: none;
+            margin-top: 15px;
+            margin-right: 100px;
+
+
+        }
+
+        .navv {
+            color: aqua;
+            float: left;
+            margin-left: 100px;
+
+        }
+
+        nav a {
+            color: aqua;
+            text-decoration: none;
+
+        }
+        li {
+            display: inline;
+            margin-right: 10px;
+            padding-left: 25px;
+        }
+        .Info{
+            
+            padding-top: 10%;
+            font-family: 'Segoe UI';
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .header{
+           
+            font-family: Georgia;
+            font-size: 35px;
+            letter-spacing: 20px;
+        }
+        #moneyy{
+            margin-bottom: 5%;
+        }
+        #topup{
+            border: none;
+            font-weight: bold;
+            background-color: rgb(0, 241, 185);
+            color: white;
+            padding-left: 21%;
+            padding-right: 21%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .input{
+            padding: 5%;
+        }
+        input {   
+            line-height: 25px;
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            padding: 1%;
+        }
+        #name{
+            margin-right: 110px;
+        }
+        #cardinfo{
+            margin-right: 127px;
+        }
+        #CVV{
+            margin-right:35px ;
+        }
+        #expirydate{
+            padding-right: 280px;
+            margin-right:85px ;
+        }
+        #amount{
+            margin-right: 65px;
+        }
+
+    </style>
+</head>
+<body onload="currentBalance()">
+    <div class="navv">
+        <p>C369 GA</p>
+    </div>
+    <div class="nav">
+        <nav>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="money.html">Account</a></li>
+        </nav>
+    </div>
+
+<section class="Info">
+    <div class="header">
+    <h2>ACCOUNT BALANCE</h2>
+    </div>
+    <div id="moneyy">
+    <p>$1000.00</p>
+    </div>
+
+</section>
+
+<button id="topup" onclick="return topUp()">Top-Up Money</button><br>
+
+<section class="input">
+    <p>Name on Card: <input type="text" id="name" ></p>
+    <p>Card Information: <input type="number" id="cardinfo"></p>
+    <p>CVV: <input type="number" id="CVV"></p>
+    <p>Expiry Date: <input type="date" id="expirydate"></p>
+    <p>Amount: <input type="number" id="amount"></p>
+</section>
+
+<footer>
+    <p>Email Us: Info.TransferTrust.com | Tel: 123-456-7890 |
+        500 Terry Francine Street San Francisco, CA 94158</p>
+</footer>
+
+</body>
+</html>
